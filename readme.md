@@ -50,6 +50,11 @@ This example deploys a test **nginx** pod to an AKS cluster, configures the pod 
 5. Change directory into the `/tf` folder and run the following commands.
 
     ```powershell
+    # change directory to /tf
+    cd /tf/
+
     # log in via az cli and initialize terraform
     ./init.sh
     ```
+
+At this point, there should be output that shows successful authentication using the `az login` command and creation of the Terraform local configuration files as well as a `k8s-tf-test.tfstate` file created within the Storage Account container.
