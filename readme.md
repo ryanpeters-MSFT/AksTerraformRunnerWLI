@@ -15,7 +15,7 @@ This example deploys a test **nginx** pod to an AKS cluster, configures the pod 
 
 2. Update the sample [providers.tf](./providers.tf) to match your configuration for your Azure Storage Account and the name of your container. Provide a name for `resource_group_name`, `storage_account_name`, and `container_name`. Optionally, adjust the `key` value. 
 
-    ***The managed identity used for your workload must have, at a minimum, `Storage Account Contributor` access to the Storage Account***.
+    **NOTE: The managed identity used for your workload must have, at a minimum, `Reader and Data Access` role to the Storage Account. This is because it requires both the `Microsoft.Storage/storageAccounts/read` and `Microsoft.Storage/storageAccounts/listKeys/action` actions to retrieve the access keys.**
 
 3. Copy the Terraform providers file, along with the [init.sh](./init.sh) file, which is used to log using the Azure CLI and run the Terraform `init` command.
 
